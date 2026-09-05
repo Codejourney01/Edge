@@ -6,22 +6,22 @@ function Item({ f }) {
   if (f.name == "Projects") {
     patch =
       "col-start-4 row-start-2 col-span-2 row-span-2 rounded-br-[15px] z-20 border-none !relative";
-    text = "text-[15px] sm:text-[16px] md:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
+    text = "text-[14px] sm:text-[16px] md:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
   }
   if (f.name == "Analysis") {
     patch =
       "col-start-6 row-start-2 col-span-2 row-span-2 rounded-bl-[15px] border-none !relative";
-    text = "text-[15px] sm:text-[16px] md:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
+    text = "text-[14px] sm:text-[16px] md:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
   }
   if (f.name == "Flux Ai") {
     patch =
       "col-start-4 row-start-4 col-span-2 row-span-2 rounded-tr-[15px] border-none !relative";
-    text = "text-[15px] sm:text-[16px] md:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
+    text = "text-[14px] sm:text-[16px] md:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
   }
   if (f.name == "Updates") {
     patch =
       "col-start-6 row-start-4 col-span-2 row-span-2 rounded-tl-[15px] border-none !relative";
-    text = "text-[15px] sm:text-[16px] md:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
+    text = "text-[14px] sm:text-[16px] md:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
   }
   let Icon = f.icon;
   return (
@@ -33,12 +33,12 @@ function Item({ f }) {
           <img src={f.img} alt="" />
          
         ) : (
-          <p className="[&>svg]:w-[13px] [&>svg]:h-[13px] sm:[&>svg]:w-[16px] sm:[&>svg]:h-[16px] md:[&>svg]:w-[24px] md:[&>svg]:h-[24px]">{<Icon color={"#888888"} />}</p>
+          <p className="[&>svg]:w-[18px] [&>svg]:h-[18px] sm:[&>svg]:w-[20px] sm:[&>svg]:h-[20px] md:[&>svg]:w-[24px] md:[&>svg]:h-[24px]">{<Icon color={"#888888"} />}</p>
           
         )}
       </p>
       <p
-        className={`text-center text-[8px] sm:text-[10px] font-medium text-[#888888] ${text}`}
+        className={`text-center text-[10px] sm:text-[10px] md:text-[11px] lg:text-[12px] font-medium text-[#888888] ${text}`}
       >
         {f.name}
       </p>
