@@ -15,11 +15,9 @@ function Home() {
       <ContextSection />
 
 
-
-
-      <div className="md:flex flex-col justify-center items-center mt-20 hidden overflow-hidden">
-        <Title text1={"All apps, Ai Agents and humans in Edge"} text2={"30+ Products to replace fragmented tools & maximize human productivity"}/>
-        <div className="bg-[#eaeaea] w-fit flex flex-col justify-center items-center overflow-hidden">
+      <div className="md:flex flex-col justify-center items-center mt-20 overflow-hidden">
+        {/* <Title text1={"All apps, Ai Agents and humans in Edge"} text2={"30+ Products to replace fragmented tools & maximize human productivity"}/> */}
+        <div className="bg-[#eaeaea] flex flex-col justify-center items-center">
           <Features />
         </div>
       </div>
