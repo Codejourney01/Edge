@@ -18,7 +18,7 @@ function Navbar() {
         <Button className="hover:bg-gray-100 text-[#666666] hidden md:flex px-4 cursor-pointer " size="lg" variant="ghost">Enterprise</Button>
       </div>
       <div className="flex items-center gap-3">
-        <Button size="lg" variant="secondary" className="cursor-pointer px-4">Login</Button>
+        <Button size="lg" variant="secondary" className="cursor-pointer px-4 hidden md:flex">Login</Button>
         <Button size="lg" className="cursor-pointer px-4">Sign Up</Button>
       </div>
     </div>
