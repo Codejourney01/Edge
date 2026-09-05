@@ -50,12 +50,13 @@ function Navbar() {
           </Button>
         </div>
         <div className="flex items-center gap-3">
-          <Button size="lg" variant="secondary" className="cursor-pointer px-4 hidden md:flex">
+          <Button size="lg" variant="secondary" className="cursor-pointer px-4">
             Login
           </Button>
           <Button size="lg" className="cursor-pointer px-4">
             Sign Up
           </Button>
+        </div>
       </div>
     </div>
   );
