@@ -1,5 +1,6 @@
 import ContextSection from "@/components/ContextSection";
 import Features from "@/components/Features";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import Title from "@/components/Title";
@@ -21,6 +22,7 @@ function Home() {
           <Features />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
