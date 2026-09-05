@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 function Navbar() {
   return (
-    <div className="font-medium sticky z-50 top-0">
+    <div className="font-medium">
       <div className="w-full hidden bg-accent text-[14px] cursor-pointer md:flex justify-center items-center py-[8px]">
         <p className="text-[#2563EB] ">New : Flux Ai —</p>
         <p className="hover:text-[#666666] text-[#222222]">
