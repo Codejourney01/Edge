@@ -24,7 +24,7 @@ export default function ContextSection() {
       <div className="md:hidden pt-9 overflow-x-auto scroll-smooth">
         <div className="w-max">
           <img
-            src="/contextsection.png"
+            src="/contextimage.svg"
             className="h-auto w-212.5 max-w-none"
             alt=""
           />
