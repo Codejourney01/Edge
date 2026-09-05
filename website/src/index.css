@@ -3,13 +3,12 @@
 @import "shadcn/tailwind.css";
 
 @font-face {
-    font-family: "PlusJakartaSans";
-    src: url("../public/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf")
-        format("truetype");
-    font-weight: 100 900;
-    font-style: normal;
+  font-family: "PlusJakartaSans";
+  src: url("/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
 }
-
 * {
   box-sizing: border-box;
 }
