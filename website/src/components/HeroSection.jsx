@@ -2,8 +2,10 @@ import React from 'react'
 import Gradientbutton from './ui/Gradientbutton'
 import Title from './ui/Title'
 import { FiCheck } from "react-icons/fi";
+import Mobilegrid from './Mobilegrid';
 export default function HeroSection() {
   return (
+    <>
     <div className='w-full px-7 pt-22 md:pt-20 md:px-25'>
          <Gradientbutton/>
          <div className='pt-5'>
@@ -42,6 +44,16 @@ export default function HeroSection() {
                 <span className='text-[#646464] text-[12px]'>No credit card</span>
             </div>
          </div>
-    </div>
+            </div>
+         <div className='md:hidden w-full mt-10 mb-10'>
+                <Mobilegrid />
+                <div className='w-full flex items-center justify-center mt-6'>
+                <button className=' w-[90%] h-12 md:w-53.5 md:h-11.75  md:flex text-[14px] items-center justify-center font-medium text-white md:text-base bg-[#202020] rounded-[11px] '>Get started. It’s FREE !</button>
+
+                </div>
+
+         </div>
+ 
+    </>
   )
 }

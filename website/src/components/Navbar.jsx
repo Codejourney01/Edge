@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 function Navbar() {
   return (
     <div className="font-medium">
-      <div className="w-full hidden  bg-accent text-[14px] cursor-pointer md:flex justify-center items-center py-[7px]">
+      <div className="w-full hidden  bg-accent text-[14px] cursor-pointer md:flex justify-center items-center py-1.75">
         <p className="text-[#2563EB] ">New : Flux Ai —</p>
         <p className="hover:text-[#666666] text-[#222222]">The best AI is your AI , The world’s first company Brain </p>
       </div>
