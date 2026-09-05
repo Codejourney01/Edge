@@ -6,7 +6,7 @@ import React from "react";
 
 function Home() {
   return (
-    <div className="w-full h-full">
+    <div className="w-full min-h-screen">
       <Navbar />
       <HeroSection />
       <div className="flex flex-col justify-center items-center mt-20">
