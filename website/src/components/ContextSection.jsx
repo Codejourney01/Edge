@@ -14,7 +14,7 @@ export default function ContextSection() {
       {/* Desktop */}
       <div className="hidden md:flex items-center justify-center pt-9">
         <img
-          src="/contextsection.png"
+          src="/contextimage.svg"
           className="w-[90%]"
           alt=""
         />
