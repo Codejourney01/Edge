@@ -5,23 +5,23 @@ function Item({ f }) {
   let text = "";
   if (f.name == "Projects") {
     patch =
-      "col-start-4 row-start-2 col-span-2 row-span-2 rounded-br-[15px] z-20 border-none !relative";
-    text = "text-[14px] sm:text-[16px] md:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
+      "col-start-4 row-start-2 col-span-2 row-span-2 rounded-br-[15px] z-20 border-none !relative bg-gradient-to-b from-red-50/70";
+    text = "text-[14px] sm:text-[16px] md:text-[20px] lg:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
   }
   if (f.name == "Analysis") {
     patch =
-      "col-start-6 row-start-2 col-span-2 row-span-2 rounded-bl-[15px] border-none !relative";
-    text = "text-[14px] sm:text-[16px] md:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
+      "col-start-6 row-start-2 col-span-2 row-span-2 rounded-bl-[15px] border-none !relative bg-gradient-to-b from-blue-50/70";
+    text = "text-[14px] sm:text-[16px] md:text-[20px] lg:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
   }
   if (f.name == "Flux Ai") {
     patch =
-      "col-start-4 row-start-4 col-span-2 row-span-2 rounded-tr-[15px] border-none !relative";
-    text = "text-[14px] sm:text-[16px] md:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
+      "col-start-4 row-start-4 col-span-2 row-span-2 rounded-tr-[15px] border-none !relative bg-gradient-to-b from-green-50/70";
+    text = "text-[14px] sm:text-[16px] md:text-[20px] lg:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
   }
   if (f.name == "Updates") {
     patch =
-      "col-start-6 row-start-4 col-span-2 row-span-2 rounded-tl-[15px] border-none !relative";
-    text = "text-[14px] sm:text-[16px] md:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
+      "col-start-6 row-start-4 col-span-2 row-span-2 rounded-tl-[15px] border-none !relative bg-gradient-to-b from-purple-50/70";
+    text = "text-[14px] sm:text-[16px] md:text-[20px] lg:text-[20px] bottom-3 !font-bold !text-[#555555] absolute";
   }
   let Icon = f.icon;
   return (
