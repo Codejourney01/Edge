@@ -84,6 +84,15 @@ html {
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --color--heading:#202020;
+  --color--subheading:#868686;
+  --color--textcolor:#000000;
+  --font--heading-desktop:48px;
+  --font--heading-mobile:24px;
+  --font--subheading-desktop:20px;
+  --font--subheading-mobile:12px;
+
+
 }
 
 
