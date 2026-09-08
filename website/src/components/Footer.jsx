@@ -118,7 +118,7 @@ function Footer() {
       </div>
 
       <Accordion className="max-w-lg hidden max-[426px]:flex w-full mt-5">
-        <div className="mb-5 flex-col flex gap-2.5">
+        <div className="flex-col flex gap-2.5">
           <img src={assets.wlogo} alt="logo" className="w-20" />
             <p className=" text-[#F1F5F9]/70 text-[12px]">
               Powering smarter decisions with Al-driven insights, project
@@ -136,7 +136,29 @@ function Footer() {
               </a>
             </div>
         </div>
-        
+        <div className="flex mb-5 justify-between items-center mt-10 max-[426px]:flex-col max-[426px]:items-start max-[426px]:gap-5">
+          <div className="flex justify-center items-center gap-5 ">
+            <Send />
+            <div className="flex flex-col ">
+              <h1 className="font-bold text-[16px]">Stay Updated</h1>
+              <p className="text-[#F1F5F9]/70 text-[12px] max-[426px]:text-[10px]">
+                Get the latest updates, features and insights delivered to your
+                inbox.
+              </p>
+            </div>
+          </div>
+          <div className="flex justify-start items-center flex-row border-1 gap-3 bg-[#151e31] border-[#1E293B] max-[769px]:w-full min-[1025px]:w-130 h-fit">
+            <BiEnvelope size={25} className="ml-4" />
+            <input
+              type="email"
+              className="outline-0 text-[14px] w-full  max-[426px]:text-[12px]"
+              placeholder="Enter your email address "
+            />
+            <button className=" max-[426px]:text-[12px] cursor-pointer p-3 text-[14px] gap-2 w-fit h-full flex justify-center items-center bg-gradient-to-r from-[#2563EB] to-[#405EFF]">
+              Subscribe <ArrowRight size={20} />
+            </button>
+          </div>
+        </div>
         <AccordionItem value="" className={"border-none"}>
           <AccordionTrigger className={"text-[12px] uppercase"}>Product</AccordionTrigger>
           <AccordionContent
@@ -212,6 +234,7 @@ function Footer() {
             <button>Project Showcase</button>
           </AccordionContent>
         </AccordionItem>
+        
          <hr className="border-[#1E293B] border-1 mt-5 mb-5" />
          <div className="flex flex-col justify-start items-start text-[#F1F5F9]/70 text-[12px]">
           <p>2026 EDGE. All rights reserved.</p>
