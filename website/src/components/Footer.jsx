@@ -124,7 +124,7 @@ function Footer() {
               Powering smarter decisions with Al-driven insights, project
               management and business intelligence.
             </p>
-            <div className="flex justify-start items-center gap-5">
+            <div className="flex justify-start items-center gap-5 mt-2">
               <a href="" className="border-1 border-[#1E293B] hover:scale-120 duration-100 p-2 rounded-full bg-[#151e31]">
                 <LiaLinkedinIn color="white" />
               </a>
@@ -152,7 +152,7 @@ function Footer() {
             <input
               type="email"
               className="outline-0 text-[14px] w-full  max-[426px]:text-[12px]"
-              placeholder="Enter your email address "
+              placeholder="Enter your email "
             />
             <button className=" max-[426px]:text-[12px] cursor-pointer p-3 text-[14px] gap-2 w-fit h-full flex justify-center items-center bg-gradient-to-r from-[#2563EB] to-[#405EFF]">
               Subscribe <ArrowRight size={20} />
