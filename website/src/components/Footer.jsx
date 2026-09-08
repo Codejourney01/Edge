@@ -215,7 +215,7 @@ function Footer() {
          <hr className="border-[#1E293B] border-1 mt-5 mb-5" />
          <div className="flex flex-col justify-start items-start text-[#F1F5F9]/70 text-[12px]">
           <p>2026 EDGE. All rights reserved.</p>
-          <div className="flex justify-between items-center gap-5">
+          <div className="flex justify-between items-center w-full">
             <a className="hover:text-white" href="">Terms</a>
             <a className="hover:text-white" href="">Privacy</a>
             <a className="hover:text-white" href="">Cookies</a>
