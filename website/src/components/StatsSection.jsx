@@ -31,9 +31,9 @@ export default function StatsSection() {
         It's like adding 15 full-time employees
       </h1>
       <p className='text-[#868686] text-sm md:text-lg pt-3'>Turn hours of manual analysis into instant business intelligence</p>
-      <div className='mt-11 mb-12 flex flex-col lg:flex-row gap-8'>
-        {stats_data.map((item) => (
-         <Statcard heading={item.heading} info={item.info} insights={item.insights} />
+      <div className='mt-11 mb-12 flex flex-col lg:flex-row gap-11'>
+        {stats_data.map((item,index) => (
+         <Statcard heading={item.heading} info={item.info} insights={item.insights}  isLast={index === stats_data.length - 1} />
     ))}
       </div>
     </div>
