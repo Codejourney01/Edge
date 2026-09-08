@@ -50,6 +50,7 @@ import {
 
 export const assets = {
   logo: "/logo.svg",
+  wlogo:"/whitelogo.svg"
 };
 
 export const features = [

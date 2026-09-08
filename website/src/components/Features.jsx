@@ -14,7 +14,7 @@ function Features() {
     lg:bg-[linear-gradient(to_right,white_0%,transparent_25%,transparent_75%,white_100%),linear-gradient(to_bottom,white_0%,transparent_25%,transparent_75%,white_100%)]
   "
 />
-      <div className="grid grid-cols-10 auto-rows-[85px] w-[850px] sm:auto-rows-[90px] sm:w-[900px] md:auto-rows-[100px] md:w-[1000px] md:auto-rows-[124px] md:w-[1224px] gap-[2px]">
+      <div className="grid grid-cols-10 auto-rows-[85px] w-[850px] sm:auto-rows-[90px] sm:w-[900px] md:auto-rows-[100px] md:w-[1000px] md:auto-rows-[124px] md:w-[1224px] gap-[1px]">
         {features.map((f) => (
           <Item key={f.name} f={f} />
         ))}
