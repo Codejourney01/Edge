@@ -1,4 +1,6 @@
 import AiSolution from "@/components/AiSolution";
+
+import AiWork from "@/components/AiWork";
 import ContextSection from "@/components/ContextSection";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
@@ -15,12 +17,19 @@ function Home() {
 
       <ContextSection />
 
-
       <div className="md:flex flex-col justify-center items-center mt-20 mb-20 overflow-hidden">
-        <Title text1={"All apps, Ai Agents and humans in Edge"} text2={"30+ Products to replace fragmented tools & maximize human productivity"}/>
+        <Title
+          text1={"All apps, Ai Agents and humans in Edge"}
+          text2={
+            "30+ Products to replace fragmented tools & maximize human productivity"
+          }
+        />
         <div className="bg-[#e2e2e2] flex flex-col justify-center items-center">
           <Features />
         </div>
+      </div>
+      <div className={"min-[1160px]:flex hidden"}>
+        <AiWork />
       </div>
       <AiSolution />
       <StatsSection />
