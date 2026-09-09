@@ -6,7 +6,7 @@ import Mobilegrid from './Mobilegrid';
 export default function HeroSection() {
   return (
     <>
-    <div className='w-full px-7 pt-22 md:pt-20 md:px-25'>
+    <div className='w-full px-7 pt-9 md:pt-12 md:px-25'>
          <Gradientbutton/>
          <div className='pt-5'>
             <Title />
