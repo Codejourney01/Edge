@@ -1,3 +1,4 @@
+import AiSolution from "@/components/AiSolution";
 import ContextSection from "@/components/ContextSection";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
@@ -21,7 +22,7 @@ function Home() {
           <Features />
         </div>
       </div>
-      
+      <AiSolution />
       <StatsSection />
       
     </div>
