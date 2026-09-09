@@ -36,6 +36,7 @@ export default function StatsSection() {
          <Statcard heading={item.heading} info={item.info} insights={item.insights}  isLast={index === stats_data.length - 1} />
     ))}
       </div>
+     
     </div>
   )
 }
