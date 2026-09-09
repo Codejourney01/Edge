@@ -504,13 +504,6 @@ html {
   border-bottom: 2px solid;
   transition: 1s all;
 }
-@layer utilities {
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
+::-webkit-scrollbar{
+  display: none;
 }

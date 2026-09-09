@@ -22,8 +22,8 @@ export default function AiSolution() {
       />
 
       {/* Categories */}
-      <div className="w-full overflow-x-auto scrollbar-hide pt-7">
-        <div className="flex items-center justify-center gap-4 px-4 w-max min-w-full">
+      <div className="w-full  pt-7">
+        <div className="flex flex-wrap items-center justify-center gap-4  w-[95%] md:w-full">
           {categories.map((category) => (
             <Categorycapsule
               key={category.cname}
