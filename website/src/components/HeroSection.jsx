@@ -38,9 +38,11 @@ export default function HeroSection() {
   const [fade, setFade] = useState(true);
 
   const handleItemClick = (item) => {
+
     if (item === 'Projects') return;
 
     if (activeItems.includes(item)) {
+
       const updatedItems = activeItems.filter(
         (active) => active !== item
       );
@@ -151,26 +153,26 @@ export default function HeroSection() {
 
       </div>
 
-      <div className='md:hidden w-full mt-10 mb-10'>
+      <div className='sm:hidden w-full mt-10 mb-10'>
 
         <Mobilegrid />
 
         <div className='w-full flex items-center justify-center mt-6'>
-          <button className='w-[90%] h-12 md:w-53.5 md:h-11.75 md:flex text-[14px] items-center justify-center font-medium text-white md:text-base bg-[#202020] rounded-[11px]'>
+          <button className='w-[90%] h-12 text-[14px] flex items-center justify-center font-medium text-white bg-[#202020] rounded-[11px]'>
             Get started. It s FREE !
           </button>
         </div>
 
       </div>
 
-      <div className='w-full h-120 mt-12 hidden md:flex'>
+      <div className='hidden sm:flex w-full mt-12 h-[480px] md:h-[400px] lg:h-120'>
 
-        <div className='w-[12%] border border-[#E5E5E5] h-full'>
+        <div className='w-[5%] md:w-[8%] lg:w-[12%] border border-[#E5E5E5] h-full'>
         </div>
 
-        <div className='w-[17%] border border-[#e5e5e5] border-l-0 h-full px-5 py-6'>
+        <div className='w-[28%] md:w-[25%] lg:w-[17%] border border-[#e5e5e5] border-l-0 h-full px-3 sm:px-4 md:px-5 py-5 md:py-6'>
 
-          <div className='flex flex-col justify-center gap-5 text-[13px]'>
+          <div className='flex flex-col justify-center gap-4 md:gap-5 text-[11px] sm:text-[12px] md:text-[13px]'>
 
             {menuItems.map((item, index) => {
 
@@ -180,7 +182,7 @@ export default function HeroSection() {
                 <button
                   key={index}
                   onClick={() => handleItemClick(item)}
-                  className={`flex items-center gap-2 whitespace-nowrap leading-none text-left transition-colors duration-200 ${
+                  className={`flex items-center gap-1.5 md:gap-2 whitespace-nowrap leading-none text-left transition-colors duration-200 ${
                     isActive
                       ? 'text-[#2563EB] font-medium'
                       : 'text-[#525252]'
@@ -189,15 +191,15 @@ export default function HeroSection() {
 
                   {isActive ? (
                     <CiCircleCheck
-                      size={17}
+                      size={16}
                       strokeWidth={2}
-                      className='shrink-0'
+                      className='shrink-0 md:w-[17px] md:h-[17px]'
                     />
                   ) : (
                     <CiCirclePlus
-                      size={17}
+                      size={16}
                       strokeWidth={2}
-                      className='shrink-0'
+                      className='shrink-0 md:w-[17px] md:h-[17px]'
                     />
                   )}
 
@@ -211,13 +213,13 @@ export default function HeroSection() {
 
         </div>
 
-        <div className='w-[59%] border border-[#e5e5e5] border-l-0 h-full overflow-hidden flex items-center justify-center bg-white'>
+        <div className='w-[62%] md:w-[62%] lg:w-[59%] border border-[#e5e5e5] border-l-0 h-full overflow-hidden flex items-center justify-center bg-white'>
 
           <img
             key={activeItem}
             src={imageMap[activeItem] || imageMap['Projects']}
             alt={activeItem}
-            className={`w-full h-full object-cover object-top transition-all duration-300 ease-in-out ${
+            className={`w-full h-full object-contain lg:object-cover object-top transition-all duration-300 ease-in-out ${
               fade
                 ? 'opacity-100 scale-100'
                 : 'opacity-0 scale-[0.98]'
@@ -226,23 +228,23 @@ export default function HeroSection() {
 
         </div>
 
-        <div className='w-[12%] border border-[#e5e5e5] border-l-0 h-full'>
+        <div className='w-[5%] md:w-[5%] lg:w-[12%] border border-[#e5e5e5] border-l-0 h-full'>
         </div>
 
       </div>
 
-      <div className='w-full h-20 hidden md:flex'>
+      <div className='hidden sm:flex w-full h-16 md:h-20'>
 
-        <div className='w-[12%] border border-[#E5E5E5] h-full border-t-0'>
+        <div className='w-[5%] md:w-[8%] lg:w-[12%] border border-[#E5E5E5] h-full border-t-0'>
         </div>
 
-        <div className='w-[17%] border border-[#e5e5e5] border-l-0 border-t-0 h-full'>
+        <div className='w-[28%] md:w-[25%] lg:w-[17%] border border-[#e5e5e5] border-l-0 border-t-0 h-full'>
         </div>
 
-        <div className='w-[59%] border border-[#e5e5e5] border-l-0 border-t-0 h-full'>
+        <div className='w-[62%] md:w-[62%] lg:w-[59%] border border-[#e5e5e5] border-l-0 border-t-0 h-full'>
         </div>
 
-        <div className='w-[12%] border border-[#e5e5e5] border-l-0 border-t-0 h-full'>
+        <div className='w-[5%] md:w-[5%] lg:w-[12%] border border-[#e5e5e5] border-l-0 border-t-0 h-full'>
         </div>
 
       </div>
