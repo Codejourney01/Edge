@@ -1,4 +1,3 @@
-
 function Item({ f }) {
   let patch = "";
   let text = "";
@@ -36,11 +35,7 @@ function Item({ f }) {
           <img src={f.img} alt="" />
         ) : (
           <div className="[&>svg]:w-[18px] [&>svg]:h-[18px] sm:[&>svg]:w-[20px] sm:[&>svg]:h-[20px] md:[&>svg]:w-[24px] md:[&>svg]:h-[24px]">
-<<<<<<< Updated upstream
             <Icon color={"#888888"} />
-=======
-            {<Icon color={"#888888"} />}
->>>>>>> Stashed changes
           </div>
         )}
       </div>

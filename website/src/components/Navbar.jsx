@@ -1,12 +1,7 @@
 import { assets } from "@/assets/assets";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
-<<<<<<< Updated upstream
 import {Link} from "react-router-dom"
-=======
-
->>>>>>> Stashed changes
 import {
   Drawer,
   DrawerContent,
@@ -208,33 +203,23 @@ function Navbar() {
         </div>
       </div>
       <div className="flex items-center gap-3">
-<<<<<<< Updated upstream
         <Link to={"/login"}>
           <Button
             size="lg"
             variant="secondary"
             className=" hidden min-[769px]:flex cursor-pointer justify-center items-center px-3"
-=======
-        <Link to="/login">
-          <Button
-            size="lg"
-            variant="secondary"
-            className="hidden min-[769px]:flex cursor-pointer justify-center items-center px-3"
->>>>>>> Stashed changes
           >
             Login
           </Button>
         </Link>
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-        <Button
-          size="lg"
-          className="cursor-pointer px-3 flex justify-center items-center max-[769px]:h-8"
-        >
-          Sign Up
-        </Button>
+        <Link to={"/register"}>
+          <Button
+            size="lg"
+            className="cursor-pointer px-3 flex justify-center items-center max-[769px]:h-8"
+          >
+            Sign Up
+          </Button>
+        </Link>
         <Drawer swipeDirection="right">
           <DrawerTrigger
             className="hidden max-[769px]:flex"
@@ -327,13 +312,15 @@ function Navbar() {
             </div>
 
             <DrawerFooter className="pt-4">
+              <Link to={"/login"}>
               <Button
                 size="lg"
                 variant="secondary"
                 className="w-full cursor-pointer"
               >
                 Login
-              </Button>
+                </Button>
+                </Link>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>

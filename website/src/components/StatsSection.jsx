@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream
-
-import Statcard from './ui/Statcard'
-
-=======
 import React from "react";
 import Statcard from "./ui/Statcard";
->>>>>>> Stashed changes
 
 export default function StatsSection() {
   const stats_data = [
