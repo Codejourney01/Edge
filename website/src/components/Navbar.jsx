@@ -1,9 +1,9 @@
 import { assets } from "@/assets/assets";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import {Link} from "react-router-dom"
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerDescription,
   DrawerFooter,
@@ -69,7 +69,6 @@ function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent hover:bg-gray-100 text-[#666666]">
                   AI Intelligence
@@ -105,7 +104,6 @@ function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-             
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent hover:bg-gray-100 text-[#666666]">
                   Solutions
@@ -136,7 +134,6 @@ function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-             
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent hover:bg-gray-100 text-[#666666]">
                   Resources
@@ -172,7 +169,6 @@ function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              
               <NavigationMenuItem className={"max-[860px]:hidden flex"}>
                 <NavigationMenuTrigger className="bg-transparent hover:bg-gray-100 text-[#666666]">
                   About
@@ -207,13 +203,15 @@ function Navbar() {
         </div>
       </div>
       <div className="flex items-center gap-3">
-        <Button
-          size="lg"
-          variant="secondary"
-          className=" hidden min-[769px]:flex cursor-pointer justify-center items-center px-3"
-        >
-          Login
-        </Button>
+        <Link to={"/login"}>
+          <Button
+            size="lg"
+            variant="secondary"
+            className=" hidden min-[769px]:flex cursor-pointer justify-center items-center px-3"
+          >
+            Login
+          </Button>
+        </Link>
         <Button
           size="lg"
           className="cursor-pointer px-3 flex justify-center items-center max-[769px]:h-8"

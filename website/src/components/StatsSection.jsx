@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Statcard from './ui/Statcard'
 
 
@@ -26,17 +26,24 @@ export default function StatsSection() {
         }
     ]
   return (
-    <div className='w-full px-7 pt-22 md:pt-20 md:px-25'>
-             <h1 className="font-semibold bg-[linear-gradient(90deg,#202020_49%,#868686_100%)] bg-clip-text text-transparent text-[24px] md:text-[44px]">
+    <div className="w-full px-7 pt-22 md:pt-20 md:px-25">
+      <h1 className="font-semibold bg-[linear-gradient(90deg,#202020_49%,#868686_100%)] bg-clip-text text-transparent text-[24px] md:text-[44px]">
         It's like adding 15 full-time employees
       </h1>
-      <p className='text-[#868686] text-sm md:text-lg pt-3'>Turn hours of manual analysis into instant business intelligence</p>
-      <div className='mt-11 mb-12 flex flex-col lg:flex-row gap-11'>
-        {stats_data.map((item,index) => (
-         <Statcard heading={item.heading} info={item.info} insights={item.insights}  isLast={index === stats_data.length - 1} />
-    ))}
+      <p className="text-[#868686] text-sm md:text-lg pt-3">
+        Turn hours of manual analysis into instant business intelligence
+      </p>
+      <div className="mt-11 mb-12 flex flex-col lg:flex-row gap-11">
+        {stats_data.map((item, index) => (
+          <Statcard
+            key={`${item.heading}-${index}`}
+            heading={item.heading}
+            info={item.info}
+            insights={item.insights}
+            isLast={index === stats_data.length - 1}
+          />
+        ))}
       </div>
-     
     </div>
-  )
+  );
 }
