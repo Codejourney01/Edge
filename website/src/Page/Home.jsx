@@ -32,7 +32,6 @@ function Home() {
       </div>
       <AiSolution />
       <StatsSection />
-      <Footer/>
     </div>
   );
 }
