@@ -28,12 +28,12 @@ export default function Login() {
         <form method="post" className="flex flex-col gap-3 w-full">
           <input
             placeholder="Email"
-            className="text-[12px] w-full p-2.5 rounded-[8px] border border-[#E5E5E5] outline-none focus:border-[#888888] focus:shadow bg-white"
+            className="text-[12px] w-full p-2.5 rounded-[4px] border border-[#E5E5E5] outline-none focus:border-[#888888] focus:shadow bg-white"
             type="email"
           />
           <input
             placeholder="Password"
-            className="text-[12px] w-full p-2.5 rounded-[8px] border border-[#E5E5E5] outline-none focus:border-[#888888] focus:shadow bg-white"
+            className="text-[12px] w-full p-2.5 rounded-[4px] border border-[#E5E5E5] outline-none focus:border-[#888888] focus:shadow bg-white"
             type="password"
           />
           <Link
@@ -42,7 +42,7 @@ export default function Login() {
           >
             Forgot your password?
           </Link>
-          <button className="w-full hover:shadow bg-[#2563EB] text-white rounded-[8px] text-[12px] py-2.5 font-medium transition-all mt-1">
+          <button className="w-full hover:shadow bg-[#2563EB] text-white rounded-[4px] text-[12px] py-2.5 font-medium transition-all mt-1">
             Log In
           </button>
         </form>

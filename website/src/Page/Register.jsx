@@ -28,22 +28,22 @@ function Register() {
         <form method="post" className="flex flex-col gap-3 w-full">
           <input
             placeholder="Name"
-            className="text-[12px] w-full p-2.5 rounded-[8px] border border-[#E5E5E5] outline-none focus:border-[#888888] focus:shadow bg-white"
+            className="text-[12px] w-full p-2.5 rounded-[4px] border border-[#E5E5E5] outline-none focus:border-[#888888] focus:shadow bg-white"
             type="text"
           />
           <input
             placeholder="Email"
-            className="text-[12px] w-full p-2.5 rounded-[8px] border border-[#E5E5E5] outline-none focus:border-[#888888] focus:shadow bg-white"
+            className="text-[12px] w-full p-2.5 rounded-[4px] border border-[#E5E5E5] outline-none focus:border-[#888888] focus:shadow bg-white"
             type="email"
           />
           <input
             placeholder="Password"
-            className="text-[12px] w-full p-2.5 rounded-[8px] border border-[#E5E5E5] outline-none focus:border-[#888888] focus:shadow bg-white"
+            className="text-[12px] w-full p-2.5 rounded-[4px] border border-[#E5E5E5] outline-none focus:border-[#888888] focus:shadow bg-white"
             type="password"
           />
           <select
             defaultValue="Employee"
-            className="text-[12px] w-full p-2.5 rounded-[8px] border border-[#E5E5E5] outline-none focus:border-[#888888] focus:shadow bg-white"
+            className="text-[12px] w-full p-2.5 rounded-[4px] border border-[#E5E5E5] outline-none focus:border-[#888888] focus:shadow bg-white"
             name=""
             id=""
           >
@@ -51,7 +51,7 @@ function Register() {
             <option value="Manager">Manager</option>
             <option value="Admin">Admin</option>
           </select>
-          <button className="hover:shadow w-full mt-2 bg-[#2563EB] text-white rounded-[8px] text-[12px] py-2.5 font-medium transition-all">
+          <button className="hover:shadow w-full mt-2 bg-[#2563EB] text-white rounded-[4px] text-[12px] py-2.5 font-medium transition-all">
             Sign Up With Email
           </button>
         </form>

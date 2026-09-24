@@ -3,7 +3,6 @@ import AiSolution from "@/components/AiSolution";
 import AiWork from "@/components/AiWork";
 import ContextSection from "@/components/ContextSection";
 import Features from "@/components/Features";
-import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
 import Title from "@/components/Title";
