@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { Link } from "react-router-dom";
 import { ChevronLeft } from 'lucide-react';
 import { assets } from "@/assets/assets";
@@ -61,3 +62,16 @@ function Register() {
 }
 
 export default Register;
+=======
+import React from 'react'
+
+function Register() {
+  return (
+    <div>
+      reg
+    </div>
+  )
+}
+
+export default Register
+>>>>>>> Stashed changes

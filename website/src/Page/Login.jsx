@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { assets } from "@/assets/assets";
 import { ChevronLeft } from "lucide-react";
 import {Link} from "react-router-dom";
@@ -44,3 +45,16 @@ export default function Login() {
     </div>
   );
 }
+=======
+import React from 'react'
+
+function Login() {
+  return (
+    <div>
+      login
+    </div>
+  )
+}
+
+export default Login
+>>>>>>> Stashed changes
