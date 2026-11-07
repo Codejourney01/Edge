@@ -165,7 +165,7 @@ export default function HeroSection() {
 
       </div>
 
-      <div className='hidden sm:flex w-full mt-12 h-[480px] md:h-[400px] lg:h-120'>
+      <div className='hidden sm:flex w-full mt-12 h-120 md:h-100 lg:h-120'>
 
         <div className='w-[5%] md:w-[8%] lg:w-[12%] border border-[#E5E5E5] h-full'>
         </div>
@@ -193,13 +193,13 @@ export default function HeroSection() {
                     <CiCircleCheck
                       size={16}
                       strokeWidth={2}
-                      className='shrink-0 md:w-[17px] md:h-[17px]'
+                      className='shrink-0 md:w-4.25 md:h-4.25'
                     />
                   ) : (
                     <CiCirclePlus
                       size={16}
                       strokeWidth={2}
-                      className='shrink-0 md:w-[17px] md:h-[17px]'
+                      className='shrink-0 md:w-4.25 md:h-4.25'
                     />
                   )}
 
