@@ -3,12 +3,9 @@ import AiSolution from "@/components/AiSolution";
 import AiWork from "@/components/AiWork";
 import ContextSection from "@/components/ContextSection";
 import Features from "@/components/Features";
-import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import Navbar from "@/components/Navbar";
 import StatsSection from "@/components/StatsSection";
 import Title from "@/components/Title";
-import React from "react";
 
 function Home() {
   return (
@@ -34,7 +31,6 @@ function Home() {
       </div>
       <AiSolution />
       <StatsSection />
-      
     </div>
   );
 }

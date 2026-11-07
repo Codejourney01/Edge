@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Gradientbutton from './ui/Gradientbutton'
 import Title from './ui/Title'
 import { FiCheck } from "react-icons/fi";
