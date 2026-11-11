@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { FiX } from "react-icons/fi";
 import Nav from "@/components/layout/Nav";
@@ -7,7 +7,9 @@ import Sidebar from "@/components/layout/Sidebar";
 export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeItem, setActiveItem] = useState("dashboard");
+  const [navHeight, setNavHeight] = useState(0);
 
+  const navRef = useRef(null);
   const dialogRef = useRef(null);
   const menuTriggerRef = useRef(null);
 
@@ -25,7 +27,22 @@ export default function DashboardLayout() {
     closeSidebar();
   }
 
-  // Synchronize the native dialog with React state.
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+
+    function updateNavHeight() {
+      setNavHeight(nav.getBoundingClientRect().height);
+    }
+
+    updateNavHeight();
+
+    const observer = new ResizeObserver(updateNavHeight);
+    observer.observe(nav);
+
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
@@ -37,7 +54,6 @@ export default function DashboardLayout() {
     }
   }, [sidebarOpen]);
 
-  // Lock background scrolling while the drawer is open.
   useEffect(() => {
     if (!sidebarOpen) return;
 
@@ -49,7 +65,6 @@ export default function DashboardLayout() {
     };
   }, [sidebarOpen]);
 
-  // Close the mobile drawer when switching to desktop.
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");
 
@@ -67,22 +82,21 @@ export default function DashboardLayout() {
   }, []);
 
   return (
-    <div className="flex min-h-dvh flex-col bg-white">
-      <Nav
-        sidebarOpen={sidebarOpen}
-        onMenuClick={openSidebar}
-      />
+    <div
+      className="flex min-h-dvh flex-col bg-white"
+      style={{ "--edge-nav-height": `${navHeight}px` }}
+    >
+      <div ref={navRef} className="sticky top-0 z-30 shrink-0 bg-white">
+        <Nav sidebarOpen={sidebarOpen} onMenuClick={openSidebar} />
+      </div>
 
       <div className="flex flex-1 items-start gap-3 px-3 pb-3 md:gap-4 md:px-5 xl:px-6 2xl:px-8">
         {/* Desktop sidebar */}
         <aside
           aria-label="Dashboard navigation"
-          className="sticky top-3 hidden h-[85vh] w-18.75 shrink-0 md:block 2xl:h-[90vh]"
+          className="sticky top-[var(--edge-nav-height)] hidden h-[85vh] max-h-[calc(100dvh_-_var(--edge-nav-height))] w-18.75 shrink-0 overflow-y-auto md:block 2xl:h-[90vh]"
         >
-          <Sidebar
-            activeItem={activeItem}
-            onSelect={selectItem}
-          />
+          <Sidebar activeItem={activeItem} onSelect={selectItem} />
         </aside>
 
         <main className="min-w-0 flex-1">
@@ -108,14 +122,12 @@ export default function DashboardLayout() {
         }}
         className="fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none overflow-hidden border-0 bg-transparent p-0 text-white outline-none backdrop:bg-black/40"
       >
-        {/* Overlay */}
         <div
           aria-hidden="true"
           onClick={closeSidebar}
           className="absolute inset-0"
         />
 
-        {/* Drawer: 48% of mobile width */}
         <div className="relative flex h-full w-[48%] flex-col overflow-hidden rounded-r-[16px] bg-[#2563EB] shadow-xl">
           <div className="flex shrink-0 justify-end px-3 pt-3">
             <button
@@ -129,10 +141,7 @@ export default function DashboardLayout() {
           </div>
 
           <div className="min-h-0 flex-1">
-            <Sidebar
-              activeItem={activeItem}
-              onSelect={selectItem}
-            />
+            <Sidebar activeItem={activeItem} onSelect={selectItem} />
           </div>
         </div>
       </dialog>
