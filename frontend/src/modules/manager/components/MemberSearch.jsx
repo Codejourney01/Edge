@@ -62,7 +62,7 @@ export default function MemberSearch({ id, members, selectedIds, mode, onSave, o
                         if (event.key === 'Enter') event.preventDefault();
                     }}
                     placeholder="Search member name or Title"
-                    className="min-w-0 flex-1 bg-transparent text-[13px] text-[#333] outline-none placeholder:text-[#525252] md:text-sm"
+                    className="min-w-0 flex-1 bg-transparent text-[13px] leading-5 text-[#333] outline-none placeholder:text-[#525252] md:text-sm"
                 />
             </label>
 
@@ -73,13 +73,13 @@ export default function MemberSearch({ id, members, selectedIds, mode, onSave, o
                     return (
                         <li
                             key={member.id}
-                            className="grid min-h-11 grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_26px] items-center gap-2 rounded-lg bg-[#f8f8f8] pl-3 pr-2 text-xs md:text-[13px]"
+                            className="grid min-h-11 grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_26px] items-center gap-2 rounded-lg bg-[#f8f8f8] pl-3 pr-2 text-xs leading-4 md:text-[13px]"
                         >
-                            <span title={member.name} className="truncate font-semibold text-[#1e1e1e]">
+                            <span title={member.name} className="truncate font-medium text-[#1e1e1e]">
                                 {member.name}
                             </span>
 
-                            <span title={member.title} className="truncate font-medium text-[#525252]">
+                            <span title={member.title} className="truncate font-normal text-[#525252]">
                                 {member.title}
                             </span>
 
@@ -100,7 +100,7 @@ export default function MemberSearch({ id, members, selectedIds, mode, onSave, o
                 })}
 
                 {visibleMembers.length === 0 && (
-                    <li className="px-2 py-2 text-[13px] text-[#525252] md:text-sm">
+                    <li className="px-2 py-2 text-[13px] leading-5 text-[#525252] md:text-sm">
                         {normalizedQuery ? 'No members found.' : 'Search for a member to add.'}
                     </li>
                 )}
@@ -109,7 +109,7 @@ export default function MemberSearch({ id, members, selectedIds, mode, onSave, o
             <div className="border-t border-[#e5e5e5] p-2">
                 <button
                     type="submit"
-                    className="h-[33px] min-w-[83px] rounded-lg bg-[#245de7] px-4 text-xs font-semibold text-white hover:bg-[#194ed3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#245de7]"
+                    className="h-[33px] min-w-[83px] rounded-lg bg-[#245de7] px-4 text-xs font-medium text-white hover:bg-[#194ed3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#245de7]"
                 >
                     Save
                 </button>

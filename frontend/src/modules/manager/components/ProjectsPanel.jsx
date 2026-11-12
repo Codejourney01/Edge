@@ -34,7 +34,7 @@ export function ProjectsHeading({ id }) {
     return (
         <h2
             id={id}
-            className="flex items-center gap-2 text-[14px] font-medium text-[#525252] md:text-[16px]"
+            className="flex items-center gap-2 text-[14px] text-[#525252] md:text-[16px]"
         >
             <span className="inline-flex size-[15px] items-center justify-center rounded-[4px] bg-[#245de7] text-white">
                 <BsListTask aria-hidden="true" className="size-3" />
@@ -56,7 +56,7 @@ export function PanelNavigation({ label, options, value, onChange, spread = fals
                     type="button"
                     aria-pressed={value === option}
                     onClick={() => onChange(option)}
-                    className={`min-h-9 border-b-2 px-2.5 text-xs font-semibold text-[#525252] hover:text-[#1e1e1e] focus-visible:outline-2 focus-visible:outline-[#245de7] sm:px-3 md:text-[13px] ${
+                    className={`min-h-9 border-b-2 px-2.5 text-xs font-medium text-[#525252] hover:text-[#1e1e1e] focus-visible:outline-2 focus-visible:outline-[#245de7] sm:px-3 ${
                         value === option ? 'border-[#1e1e1e]' : 'border-transparent'
                     }`}
                 >
@@ -200,7 +200,7 @@ function ProjectSelect({ label, value, groups, onChange, Icon, alignEnd = false 
                         setOpen(true);
                     }
                 }}
-                className={`flex h-9 w-full min-w-0 items-center gap-2 rounded-lg border px-2 text-left font-semibold hover:border-[#e5e5e5] hover:bg-[#f8f8f8] focus-visible:outline-2 focus-visible:outline-[#245de7] ${
+                className={`flex h-9 w-full min-w-0 items-center gap-2 rounded-lg border px-2 text-left font-medium hover:border-[#e5e5e5] hover:bg-[#f8f8f8] focus-visible:outline-2 focus-visible:outline-[#245de7] ${
                     open ? 'border-[#e5e5e5] bg-[#f8f8f8]' : 'border-transparent'
                 }`}
             >
@@ -216,11 +216,11 @@ function ProjectSelect({ label, value, groups, onChange, Icon, alignEnd = false 
                     role="menu"
                     aria-label={label}
                     onKeyDown={navigateMenu}
-                    className="fixed z-40 max-h-[calc(100dvh-16px)] w-[176px] max-w-[calc(100vw-16px)] divide-y divide-[#eaeaea] overflow-y-auto rounded-[9px] border border-[#e5e5e5] bg-white text-[13px] text-[#525252] shadow-md md:text-sm"
+                    className="fixed z-40 max-h-[calc(100dvh-16px)] w-[176px] max-w-[calc(100vw-16px)] divide-y divide-[#eaeaea] overflow-y-auto rounded-[9px] border border-[#e5e5e5] bg-white text-xs leading-4 text-[#525252] shadow-md"
                 >
                     {groups.map(({ label: groupLabel, options }) => (
                         <div key={groupLabel} role="group" aria-label={groupLabel} className="px-2 py-2">
-                            <div aria-hidden="true" className="px-1.5 pb-1.5 pt-1 text-[11px] font-normal text-[#666]">
+                            <div aria-hidden="true" className="px-1.5 pb-1.5 pt-1 text-[11px] font-normal leading-4 text-[#666]">
                                 {groupLabel}
                             </div>
 
@@ -235,7 +235,7 @@ function ProjectSelect({ label, value, groups, onChange, Icon, alignEnd = false 
                                         closeMenu();
                                         onChange(option);
                                     }}
-                                    className={`flex min-h-7 w-full items-center gap-2 rounded px-1.5 text-left font-semibold hover:bg-[#f4f4f4] focus-visible:outline-2 focus-visible:outline-[#245de7] ${
+                                    className={`flex min-h-7 w-full items-center gap-2 rounded px-1.5 text-left font-medium hover:bg-[#f4f4f4] focus-visible:outline-2 focus-visible:outline-[#245de7] ${
                                         value === option ? 'bg-[#f3f3f3]' : ''
                                     }`}
                                 >
@@ -345,7 +345,7 @@ export default function ProjectsPanel({ projects, selectedId, onSelect, onUpdate
                     type="button"
                     aria-expanded={creating}
                     onClick={() => setCreating(!creating)}
-                    className="mb-1.5 inline-flex min-h-8 items-center gap-1.5 rounded-lg bg-[#f8f8f8] px-2.5 text-xs font-semibold text-[#525252] hover:bg-[#eeeeee] focus-visible:outline-2 focus-visible:outline-[#245de7]"
+                    className="mb-1.5 inline-flex min-h-8 items-center gap-1.5 rounded-lg bg-[#f8f8f8] px-2.5 text-xs font-medium text-[#525252] hover:bg-[#eeeeee] focus-visible:outline-2 focus-visible:outline-[#245de7]"
                 >
                     <BsPlus aria-hidden="true" className="text-lg text-[#27272a]" />
                     Create Project
@@ -358,7 +358,7 @@ export default function ProjectsPanel({ projects, selectedId, onSelect, onUpdate
                     className="flex flex-wrap items-end gap-2 border-b border-[#eaeaea] px-4 py-3"
                 >
                     <div className="flex flex-col gap-1">
-                        <label htmlFor={nameId} className="text-xs font-semibold text-[#525252]">
+                        <label htmlFor={nameId} className="text-xs font-medium text-[#525252]">
                             Project name
                         </label>
                         <input
@@ -367,12 +367,12 @@ export default function ProjectsPanel({ projects, selectedId, onSelect, onUpdate
                             required
                             value={newName}
                             onChange={(event) => setNewName(event.target.value)}
-                            className="w-full max-w-[260px] rounded-md border border-[#e5e5e5] px-2 py-1.5 text-sm focus-visible:outline-2 focus-visible:outline-[#245de7]"
+                            className="w-full max-w-[260px] rounded-md border border-[#e5e5e5] px-2 py-1.5 text-[13px] leading-5 focus-visible:outline-2 focus-visible:outline-[#245de7] md:text-sm"
                         />
                     </div>
 
                     <div className="flex flex-col gap-1">
-                        <label htmlFor={startDateId} className="text-xs font-semibold text-[#525252]">
+                        <label htmlFor={startDateId} className="text-xs font-medium text-[#525252]">
                             Start Date
                         </label>
                         <input
@@ -380,13 +380,13 @@ export default function ProjectsPanel({ projects, selectedId, onSelect, onUpdate
                             type="date"
                             value={newStartDate}
                             onChange={(event) => setNewStartDate(event.target.value)}
-                            className="rounded-md border border-[#e5e5e5] px-2 py-1.5 text-sm focus-visible:outline-2 focus-visible:outline-[#245de7]"
+                            className="rounded-md border border-[#e5e5e5] px-2 py-1.5 text-[13px] leading-5 focus-visible:outline-2 focus-visible:outline-[#245de7] md:text-sm"
                         />
                     </div>
 
                     <button
                         type="submit"
-                        className="rounded-md bg-[#245de7] px-3 py-2 text-xs font-semibold text-white"
+                        className="rounded-md bg-[#245de7] px-3 py-2 text-xs font-medium text-white"
                     >
                         Create
                     </button>
@@ -394,7 +394,7 @@ export default function ProjectsPanel({ projects, selectedId, onSelect, onUpdate
                     <button
                         type="button"
                         onClick={() => setCreating(false)}
-                        className="rounded-md bg-[#f8f8f8] px-3 py-2 text-xs font-semibold text-[#525252]"
+                        className="rounded-md bg-[#f8f8f8] px-3 py-2 text-xs font-medium text-[#525252]"
                     >
                         Cancel
                     </button>
@@ -404,15 +404,15 @@ export default function ProjectsPanel({ projects, selectedId, onSelect, onUpdate
             <ProjectStats stats={stats} />
 
             <div className="overflow-x-auto">
-                <table className="w-full min-w-[760px] text-left text-[13px] text-[#525252] md:text-sm">
+                <table className="w-full min-w-[760px] text-left text-[13px] leading-5 text-[#525252] md:text-sm">
                     <thead>
                         <tr className="border-b border-[#eaeaea]">
-                            <th scope="col" className="py-2.5 pl-4 pr-3 font-normal">Project Name</th>
-                            <th scope="col" className="w-[108px] px-2 py-2.5 font-normal">Start Date</th>
-                            <th scope="col" className="w-[108px] px-2 py-2.5 font-normal">Due Date</th>
-                            <th scope="col" className="w-[130px] px-2 py-2.5 font-normal">Priority</th>
-                            <th scope="col" className="w-[145px] px-2 py-2.5 font-normal">Status</th>
-                            <th scope="col" className="w-[98px] px-2 py-2.5 text-center font-normal">Members</th>
+                            <th scope="col" className="py-2.5 pl-4 pr-3 text-xs font-normal leading-4">Project Name</th>
+                            <th scope="col" className="w-[108px] px-2 py-2.5 text-xs font-normal leading-4">Start Date</th>
+                            <th scope="col" className="w-[108px] px-2 py-2.5 text-xs font-normal leading-4">Due Date</th>
+                            <th scope="col" className="w-[130px] px-2 py-2.5 text-xs font-normal leading-4">Priority</th>
+                            <th scope="col" className="w-[145px] px-2 py-2.5 text-xs font-normal leading-4">Status</th>
+                            <th scope="col" className="w-[98px] px-2 py-2.5 text-center text-xs font-normal leading-4">Members</th>
                         </tr>
                     </thead>
 
@@ -429,18 +429,18 @@ export default function ProjectsPanel({ projects, selectedId, onSelect, onUpdate
                                         type="button"
                                         aria-pressed={selectedId === project.id}
                                         onClick={() => onSelect(project.id)}
-                                        className="flex items-center gap-2 break-words text-left font-semibold text-[#1e1e1e] hover:underline focus-visible:outline-2 focus-visible:outline-[#245de7]"
+                                        className="flex items-center gap-2 break-words text-left font-medium text-[#1e1e1e] hover:underline focus-visible:outline-2 focus-visible:outline-[#245de7]"
                                     >
                                         <StatusDot status="To Do" />
                                         <span className="min-w-0">{project.name}</span>
                                     </button>
                                 </td>
 
-                                <td className="whitespace-nowrap px-2 font-semibold">
+                                <td className="whitespace-nowrap px-2 text-xs leading-4 md:text-[13px]">
                                     {formatProjectDate(project.startDate)}
                                 </td>
 
-                                <td className="whitespace-nowrap px-2 font-semibold">
+                                <td className="whitespace-nowrap px-2 text-xs leading-4 md:text-[13px]">
                                     {formatProjectDate(project.dueDate)}
                                 </td>
 
@@ -465,7 +465,7 @@ export default function ProjectsPanel({ projects, selectedId, onSelect, onUpdate
                                     />
                                 </td>
 
-                                <td className="px-2 text-center font-semibold">
+                                <td className="px-2 text-center text-xs font-medium leading-4 md:text-[13px]">
                                     {project.memberIds?.length ?? 0}
                                 </td>
                             </tr>
