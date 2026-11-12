@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, A11y } from 'swiper/modules';
 
@@ -86,13 +87,13 @@ export default function Dashboard() {
                     Dashboard
                 </h3>
 
-                <button
-                    type="button"
+                <Link
+                    to="/managerdashboard/projects"
                     className="flex min-h-9 shrink-0 items-center justify-center gap-2.5 rounded-sm bg-[#FAFAFA] px-3 text-[12px] font-medium text-[#525252]"
                 >
                     <span aria-hidden="true">+</span>
                     Create Project
-                </button>
+                </Link>
             </div>
 
             <div className="min-w-0 border-t border-[#EAEAEA] bg-[#FAFAFA] px-2 pb-5 pt-3 md:px-3">
@@ -139,7 +140,7 @@ export default function Dashboard() {
                         <ProjectStatus statuses={projectStatuses} />
                     </div>
 
-                    {/* New Project, Running Projects, and bar chart */}
+                    {/* New projects, running projects, and activity chart */}
                     <div className="mt-3 grid min-w-0 grid-cols-1 gap-3 @min-[600px]:grid-cols-2 @min-[900px]:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)_minmax(0,1.7fr)]">
                         <NewProjectCard
                             invitations={pendingInvitations}
