@@ -1,12 +1,12 @@
 import React, { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { BsChevronDown, BsFlagFill, BsListTask, BsPlus } from 'react-icons/bs';
+import { BsChevronDown, BsFlagFill, BsPlus } from 'react-icons/bs';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { A11y, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 
-import Statcard from './Statcard';
+import Statcard from '../components/Statcard';
 
 const priorityColors = {
     High: 'text-[#be151d]',
@@ -36,9 +36,6 @@ export function ProjectsHeading({ id }) {
             id={id}
             className="flex items-center gap-2 text-[14px] text-[#525252] md:text-[16px]"
         >
-            <span className="inline-flex size-[15px] items-center justify-center rounded-[4px] bg-[#245de7] text-white">
-                <BsListTask aria-hidden="true" className="size-3" />
-            </span>
             Projects
         </h2>
     );
@@ -48,7 +45,7 @@ export function PanelNavigation({ label, options, value, onChange, spread = fals
     return (
         <nav
             aria-label={label}
-            className={spread ? 'flex justify-between gap-2' : 'flex gap-2'}
+            className={spread ? 'mt-4 flex justify-between gap-2' : 'flex gap-2'}
         >
             {options.map((option) => (
                 <button
@@ -295,9 +292,33 @@ function ProjectStats({ stats }) {
     );
 }
 
-export default function ProjectsPanel({ projects, selectedId, onSelect, onUpdate, onCreate }) {
+export function CreateProjectButton({ expanded, formId, onClick, className }) {
+    return (
+        <button
+            type="button"
+            aria-expanded={expanded}
+            aria-controls={expanded ? formId : undefined}
+            onClick={onClick}
+            className={`min-h-8 shrink-0 items-center gap-1.5 rounded-lg bg-[#f8f8f8] px-2.5 text-xs font-medium text-[#525252] hover:bg-[#eeeeee] focus-visible:outline-2 focus-visible:outline-[#245de7] ${className}`}
+        >
+            <BsPlus aria-hidden="true" className="text-lg text-[#27272a]" />
+            Create Project
+        </button>
+    );
+}
+
+export default function ProjectsPanel({
+    projects,
+    selectedId,
+    onSelect,
+    onUpdate,
+    onCreate,
+    creating,
+    formId,
+    onToggleCreate,
+    onCloseCreate,
+}) {
     const [filter, setFilter] = useState('All Projects');
-    const [creating, setCreating] = useState(false);
     const [newName, setNewName] = useState('');
     const [newStartDate, setNewStartDate] = useState('');
     const headingId = useId();
@@ -325,7 +346,7 @@ export default function ProjectsPanel({ projects, selectedId, onSelect, onUpdate
         setFilter('All Projects');
         setNewName('');
         setNewStartDate('');
-        setCreating(false);
+        onCloseCreate();
     }
 
     return (
@@ -333,27 +354,28 @@ export default function ProjectsPanel({ projects, selectedId, onSelect, onUpdate
             <header className="flex flex-wrap items-end justify-between gap-x-2 border-b border-[#eaeaea] px-4 pt-3.5">
                 <div className="min-w-0">
                     <ProjectsHeading id={headingId} />
-                    <PanelNavigation
-                        label="Project filters"
-                        options={['All Projects', 'Running', 'Complete']}
-                        value={filter}
-                        onChange={setFilter}
-                    />
+
+                    <div className="pt-3">
+                        <PanelNavigation
+                            label="Project filters"
+                            options={['All Projects', 'Running', 'Complete']}
+                            value={filter}
+                            onChange={setFilter}
+                        />
+                    </div>
                 </div>
 
-                <button
-                    type="button"
-                    aria-expanded={creating}
-                    onClick={() => setCreating(!creating)}
-                    className="mb-1.5 inline-flex min-h-8 items-center gap-1.5 rounded-lg bg-[#f8f8f8] px-2.5 text-xs font-medium text-[#525252] hover:bg-[#eeeeee] focus-visible:outline-2 focus-visible:outline-[#245de7]"
-                >
-                    <BsPlus aria-hidden="true" className="text-lg text-[#27272a]" />
-                    Create Project
-                </button>
+                <CreateProjectButton
+                    expanded={creating}
+                    formId={formId}
+                    onClick={onToggleCreate}
+                    className="mb-1.5 hidden md:inline-flex"
+                />
             </header>
 
             {creating && (
                 <form
+                    id={formId}
                     onSubmit={createProject}
                     className="flex flex-wrap items-end gap-2 border-b border-[#eaeaea] px-4 py-3"
                 >
@@ -393,7 +415,7 @@ export default function ProjectsPanel({ projects, selectedId, onSelect, onUpdate
 
                     <button
                         type="button"
-                        onClick={() => setCreating(false)}
+                        onClick={onCloseCreate}
                         className="rounded-md bg-[#f8f8f8] px-3 py-2 text-xs font-medium text-[#525252]"
                     >
                         Cancel

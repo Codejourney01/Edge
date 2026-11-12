@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useId, useRef, useState } from 'react';
 
 import ProjectDetailsSidebar from '../components/ProjectDetailsSidebar';
-import ProjectsPanel from '../components/ProjectsPanel';
+import ProjectsPanel, { CreateProjectButton } from '../components/ProjectsPanel';
 
 const exampleMembers = [
     { id: 'vishwesh', name: 'Vishwesh Sitapara', title: 'Full Stack Developer' },
@@ -44,8 +44,18 @@ export default function ProjectDetails({
 }) {
     const [projects, setProjects] = useState(initialProjects);
     const [selectedId, setSelectedId] = useState(initialProjects[0]?.id);
+    const [creating, setCreating] = useState(false);
+    const formId = useId();
     const nextProjectNumber = useRef(initialProjects.length + 1);
     const selectedProject = projects.find((project) => project.id === selectedId);
+
+    function toggleCreate() {
+        setCreating((open) => !open);
+    }
+
+    function closeCreate() {
+        setCreating(false);
+    }
 
     function updateProject(projectId, changes) {
         setProjects((currentProjects) => currentProjects.map((project) => (
@@ -82,6 +92,14 @@ export default function ProjectDetails({
                 key={selectedId}
                 project={selectedProject}
                 members={members}
+                headerAction={
+                    <CreateProjectButton
+                        expanded={creating}
+                        formId={formId}
+                        onClick={toggleCreate}
+                        className="inline-flex md:hidden"
+                    />
+                }
                 onSaveMembers={(projectId, memberIds) => updateProject(projectId, { memberIds })}
             />
             <ProjectsPanel
@@ -90,6 +108,10 @@ export default function ProjectDetails({
                 onSelect={setSelectedId}
                 onUpdate={updateProject}
                 onCreate={addProject}
+                creating={creating}
+                formId={formId}
+                onToggleCreate={toggleCreate}
+                onCloseCreate={closeCreate}
             />
         </section>
     );

@@ -12,7 +12,7 @@ import {
 
 const actionClass = 'inline-flex size-7 shrink-0 items-center justify-center rounded-md text-[#27272a] hover:bg-[#f2f2f2] focus-visible:outline-2 focus-visible:outline-[#245de7]';
 
-export default function ProjectDetailsSidebar({ project, members, onSaveMembers }) {
+export default function ProjectDetailsSidebar({ project, members, onSaveMembers, headerAction }) {
     const [activeTab, setActiveTab] = useState('Overview');
     const [searchMode, setSearchMode] = useState(null);
     const triggerRef = useRef(null);
@@ -40,9 +40,12 @@ export default function ProjectDetailsSidebar({ project, members, onSaveMembers 
             aria-label="Selected project details"
             className="min-w-0 border-b border-[#e5e5e5] lg:border-b-0 lg:border-r"
         >
-            <h1 className="border-b border-[#eaeaea] px-3.5 py-2.5 text-[14px] text-[#525252] md:text-[16px]">
-                Project Details
-            </h1>
+            <header className="flex items-center justify-between gap-3 border-b border-[#eaeaea] px-3.5 py-2.5">
+                <h1 className="text-[14px] text-[#525252] md:text-[16px]">
+                    Project Details
+                </h1>
+                {headerAction}
+            </header>
 
             {project ? (
                 <>
@@ -64,7 +67,7 @@ export default function ProjectDetailsSidebar({ project, members, onSaveMembers 
                         </div>
 
                         {summary && (
-                            <p className="mt-3 max-w-[250px] text-[13px] font-light leading-5.5 text-[#525252] md:text-sm">
+                            <p className="mt-3 max-w-[290px] text-[13px] font-light leading-5.5 text-[#525252] md:text-[12px]">
                                 {summary}
                             </p>
                         )}

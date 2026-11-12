@@ -61,6 +61,6 @@ export default function ProjectStatus({ statuses }) {
                     ))}
                 </ul>
             </div>
-        </section>
+        </section>   
     );
 }
