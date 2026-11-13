@@ -8,6 +8,7 @@ import Home from '@/Page/Home';
 import Login from '@/Page/Login';
 import Register from '@/Page/Register';
 import { Outlet, Route, Routes } from 'react-router-dom';
+import Inbox from '@/modules/manager/pages/Inbox';
 
 function PublicLayout() {
     return (
@@ -36,6 +37,7 @@ export default function AppRoutes() {
             <Route element={<DashboardLayout />}>
                 <Route path="/managerdashboard" element={<Dashboard />} />
                 <Route path="/managerdashboard/projects" element={<ProjectDetails />} />
+                <Route path='/managerdashboard/inbox' element={<Inbox />} />
                 <Route path="/employeedashboard" element={<EmployeeDashboard />} />
             </Route>
         </Routes>
