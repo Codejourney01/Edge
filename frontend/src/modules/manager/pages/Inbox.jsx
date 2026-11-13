@@ -4,7 +4,7 @@ import { FiInbox } from 'react-icons/fi';
 import inboxempty from '../../../assets/icons/inboxempty.png';
 import Inboxmessage from '../components/inbox/Inboxmessage';
 
-const inboxMessages = [
+ export const inboxMessages = [
     {
         id: 1,
         type: 'New Task',

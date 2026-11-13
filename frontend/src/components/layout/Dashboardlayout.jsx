@@ -4,25 +4,46 @@ import { FiX } from 'react-icons/fi';
 
 import Nav from '@/components/layout/Nav';
 import Sidebar from '@/components/layout/Sidebar';
+import { inboxMessages } from '@/modules/manager/pages/Inbox';
 
 const managerDashboardPath = '/managerdashboard';
 const managerProjectsPath = '/managerdashboard/projects';
+const managerInboxPath = '/managerdashboard/inbox';
 const employeeDashboardPath = '/employeedashboard';
 
 export default function DashboardLayout() {
     const navigate = useNavigate();
     const isProjectsPage = Boolean(useMatch(managerProjectsPath));
-    const isEmployeeDashboard = Boolean(useMatch(employeeDashboardPath));
+    const isInboxPage = Boolean(useMatch(managerInboxPath));
+    const isEmployeeDashboard = Boolean(useMatch(`${employeeDashboardPath}/*`));
+    const showInbox = !isEmployeeDashboard;
 
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState('dashboard');
     const [navHeight, setNavHeight] = useState(0);
+    const [readMessageIds, setReadMessageIds] = useState(() => new Set());
 
-    const activeItem = isProjectsPage ? 'projects' : selectedItem;
+    const unreadCount = inboxMessages.filter(
+        ({ id }) => !readMessageIds.has(id)
+    ).length;
+
+    const activeItem = isInboxPage
+        ? 'inbox'
+        : isProjectsPage
+          ? 'projects'
+          : selectedItem;
 
     const navRef = useRef(null);
     const dialogRef = useRef(null);
     const menuTriggerRef = useRef(null);
+
+    function markAsRead(id) {
+        setReadMessageIds((previousIds) => {
+            if (previousIds.has(id)) return previousIds;
+
+            return new Set([...previousIds, id]);
+        });
+    }
 
     function openSidebar(event) {
         menuTriggerRef.current = event.currentTarget;
@@ -45,6 +66,14 @@ export default function DashboardLayout() {
         if (id === 'projects' && !isEmployeeDashboard) {
             setSelectedItem('dashboard');
             navigate(managerProjectsPath);
+            return;
+        }
+
+        if (id === 'inbox') {
+            if (showInbox) {
+                setSelectedItem('dashboard');
+                navigate(managerInboxPath);
+            }
             return;
         }
 
@@ -111,24 +140,31 @@ export default function DashboardLayout() {
             style={{ '--edge-nav-height': `${navHeight}px` }}
         >
             <div ref={navRef} className="sticky top-0 z-30 shrink-0 bg-white">
-                <Nav sidebarOpen={sidebarOpen} onMenuClick={openSidebar} />
+                <Nav
+                    sidebarOpen={sidebarOpen}
+                    onMenuClick={openSidebar}
+                    onInboxClick={showInbox ? () => selectItem('inbox') : undefined}
+                    inboxCount={unreadCount}
+                />
             </div>
 
             <div className="flex flex-1 items-start gap-3 px-3 pb-3 md:gap-4 md:px-5 xl:px-6 2xl:px-8">
-                {/* Desktop sidebar */}
                 <aside
                     aria-label="Dashboard navigation"
                     className="sticky top-[var(--edge-nav-height)] hidden h-[85vh] max-h-[calc(100dvh_-_var(--edge-nav-height))] w-18.75 shrink-0 overflow-y-auto md:block 2xl:h-[90vh]"
                 >
-                    <Sidebar activeItem={activeItem} onSelect={selectItem} />
+                    <Sidebar
+                        activeItem={activeItem}
+                        onSelect={selectItem}
+                        showInbox={showInbox}
+                    />
                 </aside>
 
                 <main className="min-w-0 flex-1">
-                    <Outlet />
+                    <Outlet context={{ readMessageIds, markAsRead }} />
                 </main>
             </div>
 
-            {/* Mobile sidebar */}
             <dialog
                 ref={dialogRef}
                 id="mobile-sidebar"
@@ -165,7 +201,11 @@ export default function DashboardLayout() {
                     </div>
 
                     <div className="min-h-0 flex-1">
-                        <Sidebar activeItem={activeItem} onSelect={selectItem} />
+                        <Sidebar
+                            activeItem={activeItem}
+                            onSelect={selectItem}
+                            showInbox={showInbox}
+                        />
                     </div>
                 </div>
             </dialog>
